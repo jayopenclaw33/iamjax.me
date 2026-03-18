@@ -6,7 +6,7 @@
 
   <!-- ── SEO: Core ── -->
   <title>Jax Scott | AI Security Expert, Speaker &amp; Thought Leader</title>
-  <meta name="description" content="Jax Scott is one of the top women in AI security and cybersecurity — a Special Forces veteran, keynote speaker, and founder of Outpost Gray. The AI girl who actually builds with AI. 19+ years securing the things that matter." />
+  <meta name="description" content="Jax Scott is one of the top women in AI security and cybersecurity, a Special Forces veteran, keynote speaker, and founder of Outpost Gray. The AI girl who actually builds with AI. 19+ years securing the things that matter." />
   <meta name="keywords" content="Jax Scott, Jaclyn Scott, AI security expert, women in cybersecurity, cybersecurity women, cybersecurity girl, boss cybersecurity lady, AI girl, AI women, boss AI lady, female cybersecurity expert, women AI security, Special Forces cybersecurity, Outpost Gray, LLM security, AI governance, Shadow AI, keynote speaker, women in tech, AI speaker women, female AI expert, female tech leader, cybersecurity influencer, top women in AI, women cybersecurity leader, AI security thought leader, 2CyberChicks, RSA speaker, cybersecurity podcast women" />
   <link rel="canonical" href="https://iamjax.me" />
 
@@ -34,7 +34,7 @@
     "name": "Jaclyn Scott",
     "alternateName": ["Jax Scott", "Jaclyn 'Jax' Scott"],
     "jobTitle": "AI Security Expert, Women in Cybersecurity Leader, Keynote Speaker",
-    "description": "Jaclyn 'Jax' Scott — known as Jax — is one of the top women in AI security and cybersecurity in the United States. She is a Special Forces veteran, keynote speaker, and founder of Outpost Gray. With 19+ years in cybersecurity and 10+ years as a Cyber Electronic Warfare Warrant Officer in U.S. Army Special Forces, she is a leading female voice at the intersection of AI and security. Jax is an RSA Conference 2024 speaker, co-host of the 2CyberChicks podcast, and one of the most recognized women in tech, AI, and cybersecurity. She is frequently cited as a top woman in AI, a female cybersecurity expert, and a boss AI lady who makes complex threats understandable for executives and boards.",
+    "description": "Jaclyn 'Jax' Scott, known as Jax, is one of the top women in AI security and cybersecurity in the United States. She is a Special Forces veteran, keynote speaker, and founder of Outpost Gray. With 19+ years in cybersecurity and 10+ years as a Cyber Electronic Warfare Warrant Officer in U.S. Army Special Forces, she is a leading female voice at the intersection of AI and security. Jax is an RSA Conference 2024 speaker, co-host of the 2CyberChicks podcast, and one of the most recognized women in tech, AI, and cybersecurity. She is frequently cited as a top woman in AI, a female cybersecurity expert, and a boss AI lady who makes complex threats understandable for executives and boards.",
     "url": "https://iamjax.me",
     "email": "jax@outpostgray.com",
     "nationality": "American",
@@ -206,9 +206,6 @@
       background: rgba(13,13,13,0.92);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
-      height: 68px;
-      display: flex;
-      align-items: center;
     }
 
     .nav-inner {
@@ -218,7 +215,7 @@
       width: 100%;
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0 5%;
+      padding: 18px 5%;
     }
 
     .nav-logo {
@@ -228,6 +225,7 @@
       color: var(--white);
       text-decoration: none;
       letter-spacing: -0.01em;
+      flex-shrink: 0;
     }
     .nav-logo .dot { color: var(--amber); }
 
@@ -243,6 +241,7 @@
       font-size: 0.88rem;
       font-weight: 500;
       transition: color 0.2s;
+      white-space: nowrap;
     }
     .nav-links a:hover { color: var(--white); }
 
@@ -252,8 +251,50 @@
       background: var(--amber) !important;
       color: #000 !important;
       font-weight: 700 !important;
+      white-space: nowrap;
     }
     .nav-book:hover { background: #e0b020 !important; }
+
+    /* HAMBURGER */
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 4px 8px;
+      line-height: 1;
+    }
+
+    .nav-mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: rgba(13,13,13,0.98);
+      border-top: 1px solid var(--border);
+      padding: 16px 5% 20px;
+      gap: 0;
+      list-style: none;
+    }
+    .nav-mobile-menu.open { display: flex; }
+    .nav-mobile-menu li a {
+      display: block;
+      color: var(--gray-light);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s;
+    }
+    .nav-mobile-menu li:last-child a { border-bottom: none; margin-top: 8px; }
+    .nav-mobile-menu li a:hover { color: var(--white); }
+
+    @media (max-width: 768px) {
+      .nav-inner { padding: 18px 20px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: block; }
+    }
 
     /* ── HERO ── */
     .hero {
@@ -756,6 +797,14 @@
       .blog-grid { grid-template-columns: 1fr; }
       .hero h1 { font-size: clamp(2.8rem, 14vw, 4rem); }
       .footer-top { flex-direction: column; }
+      .hero-btns { flex-direction: column; align-items: stretch; }
+      .hero-btns .btn { text-align: center; }
+      .about-left .cta-row { flex-direction: column; }
+      .about-left .cta-row .btn { text-align: center; }
+      .podcast-cta-row { flex-direction: column; }
+      .podcast-cta-row .btn { text-align: center; }
+      .speaking-card .btn { display: block; text-align: center; }
+      .hero-category { font-size: 0.95rem; }
     }
   </style>
 </head>
@@ -772,7 +821,15 @@
       <li><a href="#blog">Blog</a></li>
       <li><a href="mailto:jax@outpostgray.com" class="nav-book">Book Me to Speak</a></li>
     </ul>
+    <button class="nav-hamburger" aria-label="Toggle menu" onclick="toggleNav()">&#9776;</button>
   </div>
+  <ul class="nav-mobile-menu" id="navMobile">
+    <li><a href="#about" onclick="closeNav()">About</a></li>
+    <li><a href="#speaking" onclick="closeNav()">Speaking</a></li>
+    <li><a href="#podcast" onclick="closeNav()">Podcast</a></li>
+    <li><a href="#blog" onclick="closeNav()">Blog</a></li>
+    <li><a href="mailto:jax@outpostgray.com" class="nav-book" style="display:block;text-align:center;" onclick="closeNav()">Book Me to Speak</a></li>
+  </ul>
 </nav>
 
 <!-- ── HERO ── -->
@@ -793,7 +850,7 @@
       </div>
       <h1>Hey,<br />I'm <span class="amber">Jax.</span></h1>
       <p class="hero-tagline"><strong>I'm a category of one.</strong> Nobody else is combining <span class="highlight">Special Forces intelligence</span>, <span class="highlight">AI security expertise</span>, and a <span class="highlight">female voice</span> that refuses to speak corporate.</p>
-      <p class="hero-category">19+ years in cybersecurity. 10+ years in Special Forces. Now I'm the person organizations call when AI threats get real — and the speaker people remember when the conference is over.</p>
+      <p class="hero-category">19+ years in cybersecurity. 10+ years in Special Forces. Now I'm the person organizations call when AI threats get real, and the speaker people remember when the conference is over.</p>
       <div class="hero-btns">
         <a href="mailto:jax@outpostgray.com" class="btn btn-amber">Invite Me to Speak</a>
         <a href="https://outpostgray.com" class="btn btn-blue" target="_blank" rel="noopener">Outpost Gray →</a>
@@ -814,9 +871,9 @@
       <div class="about-left">
         <span class="section-label">My Story</span>
         <h2 class="section-title">Special Forces.<br />AI Security.<br />No Filter.</h2>
-        <p>My career started in <em>2008</em> through the U.S. Army and led to over a decade in <strong>Special Forces</strong> as a Cyber Electronic Warfare Warrant Officer. That's not a resume line — that's where I learned to think under pressure, operate in ambiguity, and lead through the kind of threats that don't come with a playbook.</p>
+        <p>My career started in <em>2008</em> through the U.S. Army and led to over a decade in <strong>Special Forces</strong> as a Cyber Electronic Warfare Warrant Officer. That's not a resume line, that's where I learned to think under pressure, operate in ambiguity, and lead through the kind of threats that don't come with a playbook.</p>
         <p>Now I run <strong>Outpost Gray</strong>, an AI security consulting firm, and I spend my days helping organizations understand the threats they haven't fully woken up to yet: <strong>Shadow AI</strong>, <strong>LLM vulnerabilities</strong>, <strong>agentic AI</strong> acting as insider threats, and deepfakes sophisticated enough to fool your finance team.</p>
-        <p>I've spoken at <em>RSA 2024</em>. I write on Medium. I co-host the <em>2CyberChicks</em> podcast. And I built an AI agent named <em>Zara</em> — because if you're going to talk about AI, you should probably build with it too.</p>
+        <p>I've spoken at <em>RSA 2024</em>. I write on Medium. I co-host the <em>2CyberChicks</em> podcast. And I built an AI agent named <em>Zara</em>, because if you're going to talk about AI, you should probably build with it too.</p>
         <p>The throughline in everything I do: <strong>make the complex real, make the dangerous understandable, and make sure the humans in the room actually know what to do about it.</strong></p>
         <div class="cta-row">
           <a href="mailto:jax@outpostgray.com" class="btn btn-amber">Book Me to Speak</a>
@@ -827,7 +884,7 @@
         <div class="fact-card">
           <span class="fact-icon">🎖️</span>
           <div>
-            <strong>Special Forces — 10+ Years</strong>
+            <strong>Special Forces: 10+ Years</strong>
             <span>Cyber Electronic Warfare Warrant Officer, U.S. Army Special Operations Command</span>
           </div>
         </div>
@@ -835,7 +892,7 @@
           <span class="fact-icon">🔐</span>
           <div>
             <strong>19+ Years in Cybersecurity</strong>
-            <span>Federal agencies, commercial orgs, defense contractors — seen every kind of threat</span>
+            <span>Federal agencies, commercial orgs, defense contractors, seen every kind of threat</span>
           </div>
         </div>
         <div class="fact-card">
@@ -849,21 +906,21 @@
           <span class="fact-icon">🏢</span>
           <div>
             <strong>Founder &amp; President, Outpost Gray</strong>
-            <span>AI security consulting — AI governance, Shadow AI detection, LLM red teaming, vCISO</span>
+            <span>AI security consulting: AI governance, Shadow AI detection, LLM red teaming, vCISO</span>
           </div>
         </div>
         <div class="fact-card">
           <span class="fact-icon">🤖</span>
           <div>
             <strong>AI Builder</strong>
-            <span>Built Zara — a custom AI agent. I don't just talk about AI. I build with it.</span>
+            <span>Built Zara, a custom AI agent. I don't just talk about AI. I build with it.</span>
           </div>
         </div>
         <div class="fact-card">
           <span class="fact-icon">🎙️</span>
           <div>
             <strong>Co-host, 2CyberChicks Podcast</strong>
-            <span>Real talk on AI threats, cybersecurity, and the industry — no gatekeeping</span>
+            <span>Real talk on AI threats, cybersecurity, and the industry, no gatekeeping</span>
           </div>
         </div>
       </div>
@@ -876,12 +933,12 @@
   <div class="container">
     <span class="section-label">What I Do</span>
     <h2 class="section-title">I Don't Have One Job.<br />I Have a Mission.</h2>
-    <p class="section-sub">Speaking, consulting, podcasting, building — the throughline is the same: make AI and security real for the people who need to act on it.</p>
+    <p class="section-sub">Speaking, consulting, podcasting, building: the throughline is the same: make AI and security real for the people who need to act on it.</p>
     <div class="tiles-grid">
       <div class="tile">
         <span class="tile-emoji">🎤</span>
         <h3>Speaking</h3>
-        <p>Keynotes and workshops on AI security, Shadow AI risks, LLM threats, deepfake defense, and leadership at the intersection of military intelligence and emerging technology. RSA, corporate events, defense conferences — I bring energy, real stories, and zero tolerance for slide decks that put people to sleep.</p>
+        <p>Keynotes and workshops on AI security, Shadow AI risks, LLM threats, deepfake defense, and leadership at the intersection of military intelligence and emerging technology. RSA, corporate events, defense conferences, I bring energy, real stories, and zero tolerance for slide decks that put people to sleep.</p>
         <a href="mailto:jax@outpostgray.com">Book a session →</a>
       </div>
       <div class="tile">
@@ -893,7 +950,7 @@
       <div class="tile">
         <span class="tile-emoji">🎙️</span>
         <h3>2CyberChicks Podcast</h3>
-        <p>Co-hosting the 2CyberChicks podcast — real, unfiltered conversations about AI threats, cybersecurity, agentic AI risks, and breaking into the industry. We talk about the stuff other shows dance around. No gatekeeping. No jargon theater.</p>
+        <p>Co-hosting the 2CyberChicks podcast, real, unfiltered conversations about AI threats, cybersecurity, agentic AI risks, and breaking into the industry. We talk about the stuff other shows dance around. No gatekeeping. No jargon theater.</p>
         <a href="#podcast">Listen now →</a>
       </div>
       <div class="tile">
@@ -913,16 +970,16 @@
       <div class="speaking-text">
         <span class="section-label">Speaking</span>
         <h2 class="section-title">I Don't Do Boring<br />Keynotes.</h2>
-        <p>I've spoken at RSA Conference, corporate boardrooms, military and defense events, and everything in between. My sessions are built for people who need to <strong>actually use the information</strong> — not sit through a slide deck and check a box.</p>
-        <p>Whether you need a 20-minute keynote that rewires how your audience thinks about AI risk, or a half-day workshop that gives your security team a real framework — I bring Special Forces precision and zero patience for fluff.</p>
+        <p>I've spoken at RSA Conference, corporate boardrooms, military and defense events, and everything in between. My sessions are built for people who need to <strong>actually use the information</strong>, not sit through a slide deck and check a box.</p>
+        <p>Whether you need a 20-minute keynote that rewires how your audience thinks about AI risk, or a half-day workshop that gives your security team a real framework, I bring Special Forces precision and zero patience for fluff.</p>
         <ul class="speaking-topics">
           <li><span class="topic-dot"></span>Shadow AI: The Invisible Threat Already Inside Your Organization</li>
-          <li><span class="topic-dot"></span>LLM Red Teaming &amp; AI Attack Surfaces — What Defenders Need to Know</li>
+          <li><span class="topic-dot"></span>LLM Red Teaming &amp; AI Attack Surfaces: What Defenders Need to Know</li>
           <li><span class="topic-dot"></span>Agentic AI Threats: When Your AI Model Becomes an Insider Threat</li>
           <li><span class="topic-dot"></span>Deepfake Defense: How to Train Your People to Spot Synthetic Threats</li>
           <li><span class="topic-dot"></span>AI Governance Without the Panic: A Practical Framework for Leaders</li>
           <li><span class="topic-dot"></span>The Operator's Lens: Applying Special Forces Thinking to AI Security</li>
-          <li><span class="topic-dot"></span>Communicating AI Risk to Boards &amp; C-Suite — In Language They Understand</li>
+          <li><span class="topic-dot"></span>Communicating AI Risk to Boards &amp; C-Suite: In Language They Understand</li>
           <li><span class="topic-dot"></span>Women in Cyber + AI: Breaking In, Breaking Ground, Breaking the Mold</li>
         </ul>
       </div>
@@ -947,8 +1004,8 @@
         </div>
         <span class="section-label">Podcast</span>
         <h2 class="section-title">Real Talk.<br />No Filter.</h2>
-        <p>I co-host the <strong>2CyberChicks</strong> podcast — honest, no-BS conversations about AI security threats, cybersecurity careers, and navigating an industry that wasn't built for us. We cover <strong>Shadow AI</strong>, agentic AI risks, LLM vulnerabilities, deepfake scams, and the AI governance questions everyone is afraid to ask out loud.</p>
-        <p>We don't gatekeep. We don't sugarcoat. We talk like humans — because that's what this industry desperately needs more of.</p>
+        <p>I co-host the <strong>2CyberChicks</strong> podcast, honest, no-BS conversations about AI security threats, cybersecurity careers, and navigating an industry that wasn't built for us. We cover <strong>Shadow AI</strong>, agentic AI risks, LLM vulnerabilities, deepfake scams, and the AI governance questions everyone is afraid to ask out loud.</p>
+        <p>We don't gatekeep. We don't sugarcoat. We talk like humans, because that's what this industry desperately needs more of.</p>
         <div class="podcast-cta-row">
           <a href="https://podcasts.apple.com/us/podcast/2-cyber-chicks/id1733493841" class="btn btn-amber" target="_blank" rel="noopener">Listen Now</a>
           <a href="https://2cyberchicks.transistor.fm/" class="btn btn-outline" target="_blank" rel="noopener">All Episodes →</a>
@@ -989,18 +1046,18 @@
   <div class="container">
     <span class="section-label">Thoughts &amp; Writing</span>
     <h2 class="section-title">What's On My Mind</h2>
-    <p class="section-sub">I write about AI security, Shadow AI, LLM threats, agentic AI risks, and the leadership lessons nobody puts in a job description. No polish, no PR — just what I'm actually thinking.</p>
+    <p class="section-sub">I write about AI security, Shadow AI, LLM threats, agentic AI risks, and the leadership lessons nobody puts in a job description. No polish, no PR: just what I'm actually thinking.</p>
     <div class="blog-grid">
       <a href="https://medium.com/@outpostgray" class="blog-card" target="_blank" rel="noopener">
         <span class="blog-topic">AI Security</span>
-        <h3>Shadow AI Is Already Inside Your Organization — Here's What to Do About It</h3>
-        <p>Your employees aren't waiting for IT approval. They're already using AI tools you've never heard of. Here's the real risk — and how to get ahead of it.</p>
+        <h3>Shadow AI Is Already Inside Your Organization: Here's What to Do About It</h3>
+        <p>Your employees aren't waiting for IT approval. They're already using AI tools you've never heard of. Here's the real risk, and how to get ahead of it.</p>
         <span class="blog-read">Read on Medium →</span>
       </a>
       <a href="https://medium.com/@outpostgray" class="blog-card" target="_blank" rel="noopener">
         <span class="blog-topic">LLM Security</span>
         <h3>Prompt Injection &amp; Agentic AI: The Attack Surface No One Is Taking Seriously</h3>
-        <p>When your AI model starts taking autonomous actions, the attack surface changes completely. This is what LLM red teamers are finding — and what most organizations are ignoring.</p>
+        <p>When your AI model starts taking autonomous actions, the attack surface changes completely. This is what LLM red teamers are finding, and what most organizations are ignoring.</p>
         <span class="blog-read">Read on Medium →</span>
       </a>
       <a href="https://medium.com/@outpostgray" class="blog-card" target="_blank" rel="noopener">
@@ -1022,7 +1079,7 @@
     <div class="email-list-inner">
       <span class="section-label">Stay Connected</span>
       <h2>Get My <span>Unfiltered Take</span><br />on AI &amp; Security.</h2>
-      <p>No fluff. No spam. Just Jax's honest take on Shadow AI, LLM security, AI governance, and the threats your organization should be worried about — straight to your inbox.</p>
+      <p>No fluff. No spam. Just Jax's honest take on Shadow AI, LLM security, AI governance, and the threats your organization should be worried about, straight to your inbox.</p>
       <form class="email-form validate" action="https://outpostgray.us14.list-manage.com/subscribe/post?u=01c2b078c7fc9c8b7b540856c&amp;id=1d2b5ea4d6&amp;f_id=002691e1f0" method="post" target="_blank">
         <input type="email" name="EMAIL" placeholder="Your Email Address" required />
         <div aria-hidden="true" style="position:absolute;left:-5000px;"><input type="text" name="b_01c2b078c7fc9c8b7b540856c_1d2b5ea4d6" tabindex="-1" value=""></div>
@@ -1067,5 +1124,13 @@
   </div>
 </footer>
 
+<script>
+  function toggleNav() {
+    document.getElementById('navMobile').classList.toggle('open');
+  }
+  function closeNav() {
+    document.getElementById('navMobile').classList.remove('open');
+  }
+</script>
 </body>
 </html>
