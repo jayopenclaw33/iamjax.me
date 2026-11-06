@@ -1,0 +1,13 @@
+# Jax Scott (iamjax.me)
+
+> Jaclyn "Jax" Scott is an AI security expert and keynote speaker. Former U.S. Army Cyber and Electronic Warfare Special Operations Warrant Officer, former Deputy CISO and VP of Cybersecurity at Pearson, RSA Conference speaker, co-author of Cybersecurity Career Master Plan, co-host of the 2 Cyber Chicks podcast, and founder of TheZaraAI (https://thezaraai.com), which provides AI operations, secure AI assessments and custom AI agents.
+
+## Key pages
+- [Home and speaker profile](https://iamjax.me/): bio, keynote topics, booking
+- [Book Jax to speak](https://iamjax.me/#book): speaking enquiries go to jax@thezaraai.com
+- [Friday Security Brief](https://iamjax.me/blog/): weekly cybersecurity and AI security news analysis, published Fridays
+- [RSS feed](https://iamjax.me/feed.xml)
+- [TheZaraAI](https://thezaraai.com): Jax's company, for consulting and implementation work
+
+## Recent briefs
+- [Friday Security Brief: Ivanti Zero-Days, AI Agents Running an Espionage Campaign, and a ChatGPT Lockdown Bypass](https://iamjax.me/blog/friday-security-brief-2026-11-06/): The week of Nov 6, 2026: two new Ivanti Connect Secure zero-days that October patches did not fix, an exploited WordPress core flaw, a China-linked campaign run largely by AI agents, and what security leaders should do on Monday.

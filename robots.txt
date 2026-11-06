@@ -26,3 +26,7 @@ User-agent: YouBot
 Allow: /
 
 Sitemap: https://iamjax.me/sitemap.xml
+
+User-agent: *
+Disallow: /content/
+Disallow: /tools/

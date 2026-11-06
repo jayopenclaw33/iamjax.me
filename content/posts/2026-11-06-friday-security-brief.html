@@ -1,0 +1,70 @@
+<!--
+title: Friday Security Brief: Ivanti Zero-Days, AI Agents Running an Espionage Campaign, and a ChatGPT Lockdown Bypass
+description: The week of Nov 6, 2026: two new Ivanti Connect Secure zero-days that October patches did not fix, an exploited WordPress core flaw, a China-linked campaign run largely by AI agents, and what security leaders should do on Monday.
+date: 2026-11-06
+tags: CISA KEV, Ivanti Connect Secure, WordPress, Agentic AI, AI security, ChatGPT, DigiCert, Ransomware
+-->
+<section class="card tldr">
+  <h2>The short version</h2>
+  <ul>
+    <li><b>Ivanti Connect Secure</b> has two more exploited zero-days (CVE-2026-111357, CVE-2026-118527). The October fixes do not cover them, and the activity reportedly evades Ivanti's own integrity checker.</li>
+    <li><b>WordPress core</b> has an exploited race condition in the upgrader (CVE-2026-119977). Fixed in 7.1.4.</li>
+    <li><b>AI agents ran most of an espionage campaign.</b> CrowdStrike tied a China-nexus actor to an agent framework that targeted 200+ organizations.</li>
+    <li><b>ChatGPT Lockdown Mode was bypassed</b> for zero-click chat data theft in the desktop app. OpenAI fixed it in September; it was disclosed this week.</li>
+    <li><b>DigiCert</b> disclosed a breach that exposed customer contact data and, for some customers, identity documents.</li>
+  </ul>
+</section>
+
+<h2>Patch this week</h2>
+
+<h3>Ivanti Connect Secure: CVE-2026-111357 and CVE-2026-118527</h3>
+<p>CISA added both to its <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" rel="noopener">Known Exploited Vulnerabilities catalog</a> on October 30. The first is a missing-authentication flaw that allows privilege escalation; the second lets an authenticated attacker upload files to a predictable path. According to <a href="https://www.rapid7.com/blog/post/etr-additional-ivanti-connect-secure-zero-days-exploited-in-the-wild-cve-2026-111357-cve-2026-118527/" rel="noopener">Rapid7's analysis</a>, attackers chained them with CVE-2026-104935 for unauthenticated root access, with Volexity observing activity from October 3 and attributing it to a cluster it tracks as UTA0576. After getting in, the attackers stole credentials and pulled Windows LAPS passwords and BitLocker recovery keys from Active Directory. Fixed builds are 25.1.1.3 and 22.8R2.6.</p>
+<p class="why"><b>My take:</b> If you patched Ivanti in October and moved on, you are not done. A clean integrity scan is not proof here. Patch to the fixed builds, hunt on the appliance, and assume the AD secrets those accounts could read need rotating.</p>
+
+<h3>WordPress core: CVE-2026-119977</h3>
+<p>Added to KEV on November 3. It is a time-of-check to time-of-use race condition in the core upgrader: full-package upgrades stage files in predictable, web-reachable paths, which can let an unauthenticated attacker run code during the upgrade window. <a href="https://www.bleepingcomputer.com/news/security/cisa-flags-wordpress-rce-flaw-as-actively-exploited-in-attacks/" rel="noopener">BleepingComputer reports</a> the fix shipped in WordPress 7.1.4 on October 28, and Wordfence said it blocked 13,095 attacks targeting the flaw in a single 24-hour period.</p>
+<p class="why"><b>My take:</b> The update is the exposure. Update, then confirm the upgrade finished cleanly and nothing unexpected is sitting in <code>wp-content/upgrade</code>.</p>
+
+<h3>Apple, multiple products: CVE-2024-27834</h3>
+<p>Added to KEV on November 4. It is an improper-authentication flaw in iOS, iPadOS, macOS, Safari, tvOS and watchOS that lets an attacker who already has arbitrary read and write capability bypass pointer authentication. Details are from the <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" rel="noopener">KEV entry</a>.</p>
+<p class="why"><b>My take:</b> On its own this is a link in an exploit chain, not a front door. It is still a good reason to find the Apple devices in your fleet that stopped taking updates.</p>
+
+<h2>AI security</h2>
+
+<h3>AI agents ran most of a China-linked intrusion campaign</h3>
+<p><a href="https://www.bleepingcomputer.com/news/security/chinese-hackers-use-artex-ai-in-automated-attacks-against-200-orgs/" rel="noopener">BleepingComputer reports</a> on CrowdStrike research into an actor it calls Vapor Panda, describing China-nexus use of a multi-agent framework called ARTEX against more than 200 organizations in 14 countries starting October 17, with at least nine compromised. The agents handled reconnaissance, exploitation, web shells and credential harvesting while human operators stepped in at key decision points. The agents were reportedly told to avoid hosts protected by CrowdStrike Falcon, and one intrusion is said to have consumed more than 1.4 billion input tokens.</p>
+<p class="why"><b>My take:</b> This is the shift I have been warning boards about. When the attacker is an agent, intrusions get faster and pivot sooner, and the agents go looking for whatever is not covered. Your gaps in endpoint coverage are now the attack plan. Map them before an agent does.</p>
+
+<h3>Researchers bypassed ChatGPT Lockdown Mode for zero-click data theft</h3>
+<p>Check Point showed that HTML previews of code blocks, rendered in nested sandboxed frames, could escape the sandbox through popups, enabling zero-click theft of chat data in the ChatGPT desktop app through a crafted prompt, a malicious GPT or a shared chat, as <a href="https://thehackernews.com/2026/11/researchers-bypass-chatgpt-lockdown.html" rel="noopener">The Hacker News reports</a>. OpenAI fixed the issue on September 18; it was disclosed this week.</p>
+<p class="why"><b>My take:</b> "Lockdown" settings reduce risk; they do not remove it. Treat AI desktop apps as a data path in your DLP and approved-app policies, the same way you treat a browser.</p>
+
+<h2>Incidents</h2>
+
+<h3>DigiCert breach exposed customer data and some identity documents</h3>
+<p>Per <a href="https://www.bleepingcomputer.com/news/security/digicert-data-breach-exposes-customer-information-identity-documents/" rel="noopener">BleepingComputer</a>, a server migration exposed a previously VPN-only internal system to the internet, where outsiders could self-register and an authorization flaw allowed read access to archived customer data between June 27 and July 2, 2026. Exposed data included names, business emails, phone numbers and addresses, and for some customers passports, driver's licenses or utility bills. DigiCert confirmed the data access on October 19 and says its certificate authority services and issued certificates were not compromised. The number of people affected has not been disclosed.</p>
+<p class="why"><b>My take:</b> A migration turned an internal tool into an internet-facing one, and it was first treated as an account-creation issue. Ask your critical vendors how they control migrations and how they decide when something counts as a data-access event.</p>
+
+<h3>Ransomware disrupts Queens Public Library</h3>
+<p><a href="https://therecord.media/queens-library-ransomware-causes-disruptions" rel="noopener">The Record reports</a> Queens Public Library confirmed a ransomware attack that took down on-site computers, self-checkout, Wi-Fi, digital media and the mobile app across its 66 branches, which serve about 2.3 million residents. Branches stayed open. As of Thursday evening no group had claimed the attack, and it was not reported whether data was stolen.</p>
+
+<h2>What I would do on Monday</h2>
+<ol>
+  <li>Confirm every Ivanti Connect Secure appliance is on 25.1.1.3 or 22.8R2.6, then hunt and rotate exposed AD secrets.</li>
+  <li>Patch WordPress to 7.1.4 or later and check the upgrade directory on every site you own.</li>
+  <li>Pull a list of hosts with no endpoint agent. Assume an AI-driven attacker will find the same list.</li>
+  <li>Add AI desktop apps to your DLP scope and your approved-software list.</li>
+  <li>Ask your certificate authority and other identity-heavy vendors what data of yours they hold and how they handle migrations.</li>
+</ol>
+
+<hr>
+<h2>Sources</h2>
+<ul class="sources">
+  <li>CISA, <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" rel="noopener">Known Exploited Vulnerabilities Catalog</a> (entries added Oct 30, Nov 3 and Nov 4, 2026)</li>
+  <li>Rapid7, <a href="https://www.rapid7.com/blog/post/etr-additional-ivanti-connect-secure-zero-days-exploited-in-the-wild-cve-2026-111357-cve-2026-118527/" rel="noopener">Additional Ivanti Connect Secure zero-days exploited in the wild</a> (Nov 2, 2026)</li>
+  <li>BleepingComputer, <a href="https://www.bleepingcomputer.com/news/security/cisa-flags-wordpress-rce-flaw-as-actively-exploited-in-attacks/" rel="noopener">CISA flags WordPress RCE flaw as actively exploited in attacks</a> (Nov 4, 2026)</li>
+  <li>BleepingComputer, <a href="https://www.bleepingcomputer.com/news/security/chinese-hackers-use-artex-ai-in-automated-attacks-against-200-orgs/" rel="noopener">Chinese hackers use ARTEX AI in automated attacks against 200 orgs</a> (Nov 2, 2026)</li>
+  <li>The Hacker News, <a href="https://thehackernews.com/2026/11/researchers-bypass-chatgpt-lockdown.html" rel="noopener">Researchers bypass ChatGPT Lockdown Mode</a> (Nov 5, 2026)</li>
+  <li>BleepingComputer, <a href="https://www.bleepingcomputer.com/news/security/digicert-data-breach-exposes-customer-information-identity-documents/" rel="noopener">DigiCert data breach exposes customer information, identity documents</a> (Nov 5, 2026)</li>
+  <li>The Record, <a href="https://therecord.media/queens-library-ransomware-causes-disruptions" rel="noopener">Queens library ransomware causes disruptions</a> (Nov 5, 2026)</li>
+</ul>
