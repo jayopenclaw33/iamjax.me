@@ -24,11 +24,9 @@
 
 ## Profiles elsewhere
 - [RSA Conference](https://www.rsaconference.com/experts/jax-scott)
-- [SANS](https://www.sans.org/profiles/jax-scott)
 - [Special Operations Association of America](https://soaa.org/team/jaclyn-scott/)
 - [Irregular Warfare Initiative](https://www.irregularwarfare.org/jaclyn-jax-scott/)
 - [Thinkers360](https://www.thinkers360.com/tl/profiles/view/16205)
-- [2 Cyber Chicks podcast on ITSPmagazine](https://itspmagazine.com/2-cyber-chicks-podcast)
 
 ## Recent briefs
 - [Friday Security Brief: Ivanti Zero-Days, AI Agents Running an Espionage Campaign, and a ChatGPT Lockdown Bypass](https://iamjax.me/blog/friday-security-brief-2026-11-06/): The week of Nov 6, 2026: two new Ivanti Connect Secure zero-days that October patches did not fix, an exploited WordPress core flaw, a China-linked campaign run largely by AI agents, and what security leaders should do on Monday.

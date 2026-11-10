@@ -323,11 +323,9 @@ def llms(posts):
         "",
         "## Profiles elsewhere",
         "- [RSA Conference](https://www.rsaconference.com/experts/jax-scott)",
-        "- [SANS](https://www.sans.org/profiles/jax-scott)",
         "- [Special Operations Association of America](https://soaa.org/team/jaclyn-scott/)",
         "- [Irregular Warfare Initiative](https://www.irregularwarfare.org/jaclyn-jax-scott/)",
         "- [Thinkers360](https://www.thinkers360.com/tl/profiles/view/16205)",
-        "- [2 Cyber Chicks podcast on ITSPmagazine](https://itspmagazine.com/2-cyber-chicks-podcast)",
         "",
         "## Recent briefs",
     ]
