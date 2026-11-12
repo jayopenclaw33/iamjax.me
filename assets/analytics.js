@@ -1,6 +1,6 @@
 /* Google Analytics 4, consent-first.
    Nothing loads and no cookie is set until the visitor clicks Accept.
-   Until GA_ID is filled in, this file does nothing at all (no banner either). */
+   If GA_ID is ever cleared, this file does nothing at all (no banner either). */
 (function () {
   var GA_ID = 'G-G1CZ4KG2QK'; // GA4 > Admin > Data streams > iamjax.me
   var KEY = 'iamjax_consent_v1';
