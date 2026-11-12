@@ -35,6 +35,8 @@ AUTHOR = "Jax Scott"
 BLOG_NAME = "Friday Security Brief"
 BLOG_DESC = ("A weekly, plain-English read on the security and AI threats that mattered this week, "
              "from Jax Scott, former Special Operations cyber warrant officer and founder of TheZaraAI.")
+SPEAKER_UPDATED = "2026-11-10"  # bump when speaker/index.html changes
+PERSON_ID = f"{SITE}/#jax"  # the Person entity defined in index.html JSON-LD
 REQUIRED = ("title", "description", "date")
 EM_DASH = "—"
 
@@ -52,6 +54,7 @@ NAV = '''<nav class="nav" aria-label="Main">
   <ul>
     <li><a href="/#about">About</a></li>
     <li><a href="/#talks">Talks</a></li>
+    <li><a href="/speaker/">Speaker Kit</a></li>
     <li><a href="/blog/">Security Brief</a></li>
     <li><a href="https://thezaraai.com" rel="noopener">TheZaraAI</a></li>
   </ul>
@@ -68,6 +71,7 @@ FOOT = '''<footer class="foot">
       <div><h4>Work</h4><ul>
         <li><a href="https://thezaraai.com" rel="noopener">TheZaraAI.com</a></li>
         <li><a href="/#book">Book a keynote</a></li>
+        <li><a href="/speaker/">Speaker kit and bios</a></li>
         <li><a href="/#talks">Talks</a></li></ul></div>
       <div><h4>Read + listen</h4><ul>
         <li><a href="/blog/">Friday Security Brief</a></li>
@@ -128,6 +132,8 @@ def head(title, desc, url, og_type="website", extra=""):
 <meta property="og:type" content="{og_type}">
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITE}/assets/img/og-jax-scott.jpg">
+<meta property="og:image:alt" content="Jax Scott, AI security keynote speaker">
+<meta property="og:site_name" content="Jax Scott">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@the_Zaraai">
 <link rel="alternate" type="application/rss+xml" title="{BLOG_NAME} by Jax Scott" href="{SITE}/feed.xml">
@@ -150,11 +156,13 @@ def post_page(p):
         "url": p["url"],
         "image": f"{SITE}/assets/img/og-jax-scott.jpg",
         "keywords": ", ".join(p["tags"]),
+        "about": [{"@type": "Thing", "name": t} for t in p["tags"]],
+        "inLanguage": "en-US",
         "isPartOf": {"@type": "Blog", "name": BLOG_NAME, "url": f"{SITE}/blog/"},
-        "author": {"@type": "Person", "name": AUTHOR, "url": f"{SITE}/",
-                   "jobTitle": "AI Security Expert and Keynote Speaker",
+        "author": {"@type": "Person", "@id": PERSON_ID, "name": AUTHOR, "url": f"{SITE}/",
+                   "jobTitle": "AI Security Keynote Speaker and Founder of TheZaraAI",
                    "worksFor": {"@type": "Organization", "name": "TheZaraAI", "url": "https://thezaraai.com"}},
-        "publisher": {"@type": "Person", "name": AUTHOR, "url": f"{SITE}/"},
+        "publisher": {"@type": "Person", "@id": PERSON_ID, "name": AUTHOR, "url": f"{SITE}/"},
     }
     crumbs = {
         "@context": "https://schema.org", "@type": "BreadcrumbList",
@@ -273,7 +281,8 @@ def feed(posts):
 
 def sitemap(posts):
     today = dt.date.today().isoformat()
-    urls = [(f"{SITE}/", today, "1.0"), (f"{SITE}/blog/", posts[0]["date"] if posts else today, "0.9")]
+    urls = [(f"{SITE}/", today, "1.0"), (f"{SITE}/speaker/", SPEAKER_UPDATED, "0.9"),
+            (f"{SITE}/blog/", posts[0]["date"] if posts else today, "0.9")]
     urls += [(p["url"], p["date"], "0.8") for p in posts]
     urls += [(f"{SITE}/legal/{n}.html", "2026-11-06", "0.2") for n in ("privacy", "terms", "disclaimer", "refund-policy")]
     body = "\n".join(f"  <url><loc>{u}</loc><lastmod>{m}</lastmod><priority>{pr}</priority></url>" for u, m, pr in urls)
@@ -284,17 +293,39 @@ def llms(posts):
     lines = [
         "# Jax Scott (iamjax.me)",
         "",
-        "> Jaclyn \"Jax\" Scott is an AI security expert and keynote speaker. Former U.S. Army Cyber and Electronic "
-        "Warfare Special Operations Warrant Officer, former Deputy CISO and VP of Cybersecurity at Pearson, RSA "
-        "Conference speaker, co-author of Cybersecurity Career Master Plan, co-host of the 2 Cyber Chicks podcast, "
-        "and founder of TheZaraAI (https://thezaraai.com), which provides AI operations, secure AI assessments and custom AI agents.",
+        "> Jaclyn \"Jax\" Scott is an AI security keynote speaker and founder of TheZaraAI (https://thezaraai.com). "
+        "She has more than 20 years in cybersecurity: former U.S. Army Cyber and Electronic Warfare Special Operations "
+        "Warrant Officer, former Deputy CISO and VP of Cybersecurity at Pearson, RSA Conference speaker, co-author of "
+        "Cybersecurity Career Master Plan and co-host of the award-winning 2 Cyber Chicks podcast.",
+        "",
+        "## Facts",
+        "- More than 20 years in cybersecurity.",
+        "- U.S. Army Cyber and Electronic Warfare Special Operations Warrant Officer who supported SOCOM, SOCEUR, "
+        "the Department of State and NATO. Still serves as a Chief Warrant Officer in the 75th Innovation Command.",
+        "- Former Deputy CISO and VP of Cybersecurity at Pearson.",
+        "- Co-author of the book Cybersecurity Career Master Plan.",
+        "- Co-host of the award-winning 2 Cyber Chicks podcast.",
+        "- RSA Conference speaker.",
+        "- Wrote the Jax Act as a board member of the Special Operations Association of America.",
+        "- Master's in Cybersecurity Risk Management, Georgetown University.",
+        "- Founder of TheZaraAI, which provides AI operations, secure AI assessments and custom AI agents.",
+        "- Speaks on agentic AI security, Shadow AI, prompt injection, deepfake defense, AI governance, "
+        "AI risk for boards and the C-suite, and women in cybersecurity and AI.",
         "",
         "## Key pages",
-        f"- [Home and speaker profile]({SITE}/): bio, keynote topics, booking",
+        f"- [Home]({SITE}/): bio, keynote topics, FAQ and booking",
+        f"- [Speaker kit]({SITE}/speaker/): copy-ready short, medium and long bios, keynote topics, formats, "
+        "audiences and headshot download",
         f"- [Book Jax to speak]({SITE}/#book): speaking enquiries go to jax@thezaraai.com",
         f"- [{BLOG_NAME}]({SITE}/blog/): weekly cybersecurity and AI security news analysis, published Fridays",
         f"- [RSS feed]({SITE}/feed.xml)",
         "- [TheZaraAI](https://thezaraai.com): Jax's company, for consulting and implementation work",
+        "",
+        "## Profiles elsewhere",
+        "- [RSA Conference](https://www.rsaconference.com/experts/jax-scott)",
+        "- [Special Operations Association of America](https://soaa.org/team/jaclyn-scott/)",
+        "- [Irregular Warfare Initiative](https://www.irregularwarfare.org/jaclyn-jax-scott/)",
+        "- [Thinkers360](https://www.thinkers360.com/tl/profiles/view/16205)",
         "",
         "## Recent briefs",
     ]
@@ -327,8 +358,9 @@ def main():
     (ROOT / "llms.txt").write_text(llms(posts), encoding="utf-8")
     update_home(posts)
 
-    bad = [str(f.relative_to(ROOT)) for f in [ROOT / "index.html", ROOT / "feed.xml", *BLOG_DIR.rglob("*.html")]
-           if EM_DASH in f.read_text(encoding="utf-8")]
+    checked = [ROOT / "index.html", ROOT / "feed.xml", ROOT / "llms.txt", ROOT / "speaker" / "index.html",
+               *BLOG_DIR.rglob("*.html")]
+    bad = [str(f.relative_to(ROOT)) for f in checked if f.exists() and EM_DASH in f.read_text(encoding="utf-8")]
     if bad:
         sys.exit("em dash found (house style forbids them): " + ", ".join(bad))
     print(f"built {len(posts)} post(s): " + ", ".join(slugs))

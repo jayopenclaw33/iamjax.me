@@ -144,3 +144,27 @@
     });
   }
 })();
+
+/* copy-to-clipboard for speaker kit bios: <button data-copy="#id"> */
+(function () {
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    var label = btn.textContent;
+    btn.addEventListener('click', function () {
+      var el = document.querySelector(btn.getAttribute('data-copy'));
+      if (!el) return;
+      var text = el.innerText.trim();
+      function done(ok) {
+        btn.textContent = ok ? 'Copied' : 'Select and copy';
+        setTimeout(function () { btn.textContent = label; }, 2000);
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+      } else {
+        var r = document.createRange(); r.selectNodeContents(el);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+        done(ok);
+      }
+    });
+  });
+})();
