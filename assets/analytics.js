@@ -2,7 +2,7 @@
    Nothing loads and no cookie is set until the visitor clicks Accept.
    Until GA_ID is filled in, this file does nothing at all (no banner either). */
 (function () {
-  var GA_ID = ''; // e.g. 'G-ABC123XYZ', from GA4 > Admin > Data streams > iamjax.me
+  var GA_ID = 'G-G1CZ4KG2QK'; // GA4 > Admin > Data streams > iamjax.me
   var KEY = 'iamjax_consent_v1';
   if (!/^G-[A-Z0-9]{4,}$/.test(GA_ID)) return;
 
