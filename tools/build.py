@@ -82,7 +82,8 @@ FOOT = '''<footer class="foot">
         <li><a href="https://instagram.com/the_Zaraai" rel="noopener">Instagram</a></li>
         <li><a href="https://x.com/the_Zaraai" rel="noopener">X</a></li>
         <li><a href="/legal/privacy.html">Privacy</a></li>
-        <li><a href="/legal/terms.html">Terms</a></li></ul></div>
+        <li><a href="/legal/terms.html">Terms</a></li>
+        <li><a href="#" data-consent-reset>Cookie settings</a></li></ul></div>
     </div>
     <p class="big grad">IAMJAX.ME</p>
     <p class="copy">&copy; <span data-year>2026</span> Jax Scott. Speaking enquiries: <a href="mailto:jax@thezaraai.com">jax@thezaraai.com</a></p>
@@ -201,6 +202,7 @@ def post_page(p):
 </main>
 {FOOT}
 <script src="/assets/site.js" defer></script>
+<script src="/assets/analytics.js" defer></script>
 </body>
 </html>
 '''
@@ -239,6 +241,7 @@ def blog_index(posts):
 </main>
 {FOOT}
 <script src="/assets/site.js" defer></script>
+<script src="/assets/analytics.js" defer></script>
 </body>
 </html>
 '''
