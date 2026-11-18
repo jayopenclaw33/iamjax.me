@@ -35,7 +35,8 @@ AUTHOR = "Jax Scott"
 BLOG_NAME = "Friday Security Brief"
 BLOG_DESC = ("A weekly, plain-English read on the security and AI threats that mattered this week, "
              "from Jax Scott, former Special Operations cyber warrant officer and founder of TheZaraAI.")
-SPEAKER_UPDATED = "2026-11-10"  # bump when speaker/index.html changes
+SPEAKER_UPDATED = "2026-11-17"  # bump when speaker/index.html changes
+WOMEN_UPDATED = "2026-11-17"  # bump when women-in-ai-security/index.html changes
 PERSON_ID = f"{SITE}/#jax"  # the Person entity defined in index.html JSON-LD
 REQUIRED = ("title", "description", "date")
 EM_DASH = "—"
@@ -72,6 +73,7 @@ FOOT = '''<footer class="foot">
         <li><a href="https://thezaraai.com" rel="noopener">TheZaraAI.com</a></li>
         <li><a href="/#book">Book a keynote</a></li>
         <li><a href="/speaker/">Speaker kit and bios</a></li>
+        <li><a href="/women-in-ai-security/">Women in AI security</a></li>
         <li><a href="/#talks">Talks</a></li></ul></div>
       <div><h4>Read + listen</h4><ul>
         <li><a href="/blog/">Friday Security Brief</a></li>
@@ -185,7 +187,7 @@ def post_page(p):
 {NAV}
 <header class="article-hero wrap" style="max-width:760px">
   <p class="crumbs"><a href="/">Home</a> / <a href="/blog/">{BLOG_NAME}</a></p>
-  <p class="kicker">{BLOG_NAME} &middot; <time datetime="{p["date"]}">{nice_date(p["date_obj"])}</time></p>
+  <p class="kicker">{html.escape(p.get("series", BLOG_NAME))} &middot; <time datetime="{p["date"]}">{nice_date(p["date_obj"])}</time></p>
   <h1>{html.escape(p["title"])}</h1>
   <div class="byline"><img src="/assets/img/jax-scott-headshot-640.webp" alt="" width="44" height="44">
     <span>By <b style="color:var(--ink)">Jax Scott</b>, former Special Operations cyber warrant officer and founder of TheZaraAI</span></div>
@@ -285,6 +287,7 @@ def feed(posts):
 def sitemap(posts):
     today = dt.date.today().isoformat()
     urls = [(f"{SITE}/", today, "1.0"), (f"{SITE}/speaker/", SPEAKER_UPDATED, "0.9"),
+            (f"{SITE}/women-in-ai-security/", WOMEN_UPDATED, "0.9"),
             (f"{SITE}/blog/", posts[0]["date"] if posts else today, "0.9")]
     urls += [(p["url"], p["date"], "0.8") for p in posts]
     urls += [(f"{SITE}/legal/{n}.html", "2026-11-06", "0.2") for n in ("privacy", "terms", "disclaimer", "refund-policy")]
@@ -319,6 +322,8 @@ def llms(posts):
         f"- [Home]({SITE}/): bio, keynote topics, FAQ and booking",
         f"- [Speaker kit]({SITE}/speaker/): copy-ready short, medium and long bios, keynote topics, formats, "
         "audiences and headshot download",
+        f"- [Women in AI security]({SITE}/women-in-ai-security/): Jax's work as a woman leader in AI security, "
+        "her women in cyber and AI keynote, and an FAQ",
         f"- [Book Jax to speak]({SITE}/#book): speaking enquiries go to jax@thezaraai.com",
         f"- [{BLOG_NAME}]({SITE}/blog/): weekly cybersecurity and AI security news analysis, published Fridays",
         f"- [RSS feed]({SITE}/feed.xml)",
@@ -330,7 +335,7 @@ def llms(posts):
         "- [Irregular Warfare Initiative](https://www.irregularwarfare.org/jaclyn-jax-scott/)",
         "- [Thinkers360](https://www.thinkers360.com/tl/profiles/view/16205)",
         "",
-        "## Recent briefs",
+        "## Recent posts",
     ]
     lines += [f"- [{p['title']}]({p['url']}): {p['description']}" for p in posts[:12]]
     return "\n".join(lines) + "\n"
@@ -339,7 +344,8 @@ def llms(posts):
 def update_home(posts):
     path = ROOT / "index.html"
     src = path.read_text(encoding="utf-8")
-    cards = "\n".join(brief_card(p) for p in posts[:3]) or '<p class="lede">The first brief lands Friday.</p>'
+    briefs = [p for p in posts if "series" not in p]  # the homepage block shows Friday briefs only
+    cards = "\n".join(brief_card(p) for p in briefs[:3]) or '<p class="lede">The first brief lands Friday.</p>'
     new, n = re.subn(r"(<!-- BRIEFS:START -->).*?(<!-- BRIEFS:END -->)", lambda m: f"{m.group(1)}\n{cards}\n{m.group(2)}", src, flags=re.S)
     if n != 1:
         sys.exit("index.html: BRIEFS markers not found")
@@ -362,6 +368,7 @@ def main():
     update_home(posts)
 
     checked = [ROOT / "index.html", ROOT / "feed.xml", ROOT / "llms.txt", ROOT / "speaker" / "index.html",
+               ROOT / "women-in-ai-security" / "index.html",
                *BLOG_DIR.rglob("*.html")]
     bad = [str(f.relative_to(ROOT)) for f in checked if f.exists() and EM_DASH in f.read_text(encoding="utf-8")]
     if bad:

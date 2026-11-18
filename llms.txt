@@ -17,6 +17,7 @@
 ## Key pages
 - [Home](https://iamjax.me/): bio, keynote topics, FAQ and booking
 - [Speaker kit](https://iamjax.me/speaker/): copy-ready short, medium and long bios, keynote topics, formats, audiences and headshot download
+- [Women in AI security](https://iamjax.me/women-in-ai-security/): Jax's work as a woman leader in AI security, her women in cyber and AI keynote, and an FAQ
 - [Book Jax to speak](https://iamjax.me/#book): speaking enquiries go to jax@thezaraai.com
 - [Friday Security Brief](https://iamjax.me/blog/): weekly cybersecurity and AI security news analysis, published Fridays
 - [RSS feed](https://iamjax.me/feed.xml)
@@ -28,5 +29,8 @@
 - [Irregular Warfare Initiative](https://www.irregularwarfare.org/jaclyn-jax-scott/)
 - [Thinkers360](https://www.thinkers360.com/tl/profiles/view/16205)
 
-## Recent briefs
+## Recent posts
+- [Awards for Women in AI and Cybersecurity, 2026](https://iamjax.me/blog/ai-cybersecurity-awards-for-women/): A checked list of current awards, lists and scholarships for women in AI and cybersecurity, each linked to its official page, plus how to write a nomination.
+- [Why Who Builds AI Is a Security Question](https://iamjax.me/blog/who-builds-ai-security-question/): Shared blind spots make brittle AI. Why women in AI security matter to defense, what the NIST AI RMF says about diverse teams, and what leaders can do now.
+- [Deepfake CEO Fraud: What to Train Teams For](https://iamjax.me/blog/deepfake-fraud-executive-training/): Deepfake CEO fraud is real: a $25 million video call, a cloned WPP CEO, FBI and FinCEN warnings. The six scenarios to train for and the controls that hold.
 - [Friday Security Brief: Ivanti Zero-Days, AI Agents Running an Espionage Campaign, and a ChatGPT Lockdown Bypass](https://iamjax.me/blog/friday-security-brief-2026-11-06/): The week of Nov 6, 2026: two new Ivanti Connect Secure zero-days that October patches did not fix, an exploited WordPress core flaw, a China-linked campaign run largely by AI agents, and what security leaders should do on Monday.
