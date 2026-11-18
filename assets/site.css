@@ -340,3 +340,12 @@ h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.02em;}
 .profiles{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem;}
 @media (max-width:900px){.kit-hero{grid-template-columns:1fr;}.kit-photo{order:-1;max-width:300px;justify-self:start;}.facts{grid-template-columns:1fr 1fr;}}
 @media (max-width:620px){.facts,.cols{grid-template-columns:1fr;}.bio,.cols .card{padding:1.3rem 1.25rem;}}
+/* consent banner (assets/analytics.js) */
+.consent{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:150;width:min(calc(100% - 24px),640px);
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:14px 16px;border-radius:18px;
+  background:rgba(10,11,18,.92);border:1px solid var(--line-2);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  box-shadow:0 20px 50px -20px rgba(0,0,0,.9);font-size:.88rem;color:var(--muted);}
+.consent p{margin:0;}
+.consent a{color:var(--ink);}
+.consent div{display:flex;gap:.5rem;flex-shrink:0;}
+@media (max-width:560px){.consent{flex-direction:column;align-items:stretch;}.consent div{justify-content:flex-end;}}
