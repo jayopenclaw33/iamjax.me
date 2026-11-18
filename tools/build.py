@@ -32,8 +32,8 @@ SITE = "https://iamjax.me"
 POSTS_DIR = ROOT / "content" / "posts"
 BLOG_DIR = ROOT / "blog"
 AUTHOR = "Jax Scott"
-BLOG_NAME = "Friday Security Brief"
-BLOG_DESC = ("A weekly, plain-English read on the security and AI threats that mattered this week, "
+BLOG_NAME = "Security Briefs and Guides"
+BLOG_DESC = ("The Friday Security Brief, a weekly plain-English read on the security and AI threats that mattered, plus guides and essays, "
              "from Jax Scott, former Special Operations cyber warrant officer and founder of TheZaraAI.")
 SPEAKER_UPDATED = "2026-11-17"  # bump when speaker/index.html changes
 WOMEN_UPDATED = "2026-11-17"  # bump when women-in-ai-security/index.html changes
@@ -223,7 +223,7 @@ def blog_index(posts):
           "blogPost": [{"@type": "BlogPosting", "headline": p["title"], "url": p["url"], "datePublished": p["date"]}
                        for p in posts]}
     cards = "\n".join(brief_card(p, "h2") for p in posts) or '<p class="lede">The first brief lands Friday.</p>'
-    return f'''{head(BLOG_NAME + ": weekly cybersecurity and AI security news | Jax Scott", BLOG_DESC, SITE + "/blog/",
+    return f'''{head(BLOG_NAME + ": AI security news and guides | Jax Scott", BLOG_DESC, SITE + "/blog/",
                 extra=f'<script type="application/ld+json">{json.dumps(ld)}</script>')}
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -231,8 +231,8 @@ def blog_index(posts):
 {NAV}
 <header class="article-hero wrap">
   <p class="crumbs"><a href="/">Home</a> / {BLOG_NAME}</p>
-  <p class="kicker">Every Friday</p>
-  <h1 style="max-width:16ch">The <span class="serif grad">Friday</span> Security Brief</h1>
+  <p class="kicker">Briefs every Friday, plus guides</p>
+  <h1 style="max-width:16ch">Security <span class="serif grad">Briefs</span> and Guides</h1>
   <p class="lede">{BLOG_DESC}</p>
   <a class="rss" href="/feed.xml">{RSS_ICON}Subscribe via RSS</a>
 </header>

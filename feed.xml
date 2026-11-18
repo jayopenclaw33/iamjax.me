@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <channel>
-  <title>Friday Security Brief by Jax Scott</title>
+  <title>Security Briefs and Guides by Jax Scott</title>
   <link>https://iamjax.me/blog/</link>
   <atom:link href="https://iamjax.me/feed.xml" rel="self" type="application/rss+xml"/>
-  <description>A weekly, plain-English read on the security and AI threats that mattered this week, from Jax Scott, former Special Operations cyber warrant officer and founder of TheZaraAI.</description>
+  <description>The Friday Security Brief, a weekly plain-English read on the security and AI threats that mattered, plus guides and essays, from Jax Scott, former Special Operations cyber warrant officer and founder of TheZaraAI.</description>
   <language>en-us</language>
   <lastBuildDate>Tue, 17 Nov 2026 12:00:00 +0000</lastBuildDate>
-  <image><url>https://iamjax.me/assets/img/og-jax-scott.jpg</url><title>Friday Security Brief by Jax Scott</title><link>https://iamjax.me/blog/</link></image>
+  <image><url>https://iamjax.me/assets/img/og-jax-scott.jpg</url><title>Security Briefs and Guides by Jax Scott</title><link>https://iamjax.me/blog/</link></image>
   <item>
     <title>Awards for Women in AI and Cybersecurity, 2026</title>
     <link>https://iamjax.me/blog/ai-cybersecurity-awards-for-women/</link>
@@ -21,7 +21,7 @@
   <ul>
     <li><b>Cybersecurity:</b> SC Media's Women in IT Security, the Most Inspiring Women in Cyber Awards, and the Cybersecurity Leader category of the Women in Tech and AI Awards.</li>
     <li><b>AI:</b> the Women in AI (WAI) Awards in North America and Asia Pacific, and the VentureBeat Women in AI Awards.</li>
-    <li><b>Scholarships:</b> WiCyS conference scholarships, the Cyber Defense Magazine Women in Cybersecurity Scholarship Fund, and ESET's Women in Cybersecurity Scholarship.</li>
+    <li><b>Scholarships:</b> WiCyS conference scholarships and ESET's Women in Cybersecurity Scholarship.</li>
     <li><b>Most cycles below have closed for this year.</b> Bookmark the official pages and write the nomination now, while the work is fresh.</li>
   </ul>
 </section>
@@ -38,12 +38,12 @@
 <p>A UK program run through IT Security Guru. Nominations for the 2026 awards opened in November 2025, and the physical ceremony took place on February 26, 2026, per the <a href="https://www.itsecurityguru.org/2025/11/25/nominations-open-for-the-most-inspiring-women-in-cyber-awards-2026/" rel="noopener">official nominations announcement</a>. Watch the same site for the next cycle.</p>
 
 <h3>Women in Tech and AI Awards: Cybersecurity Leader of the Year</h3>
-<p>WomenTech Network runs a global, virtual awards program with a Cybersecurity Leader of the Year category and a Responsible AI Leader of the Year category. Its <a href="https://www.womentech.net/women-in-tech-ai-awards" rel="noopener">official awards page</a> lists 2026 nominations as closed on October 11, 2026, with winners announced on December 3, 2026.</p>
+<p>WomenTech Network runs a global, virtual awards program with a Cybersecurity Leader of the Year category and a Responsible AI Leader of the Year category. Its <a href="https://www.womentech.net/women-in-tech-ai-awards" rel="noopener">official awards page</a> lists a virtual ceremony on December 3, 2026. A participation fee applies per category, so read the terms first.</p>
 
 <h2>Women in AI awards</h2>
 
 <h3>Women in AI (WAI) Awards North America</h3>
-<p>Run by Women in AI for women working in AI in Canada, the US and Mexico. Self-nominations are accepted. The <a href="https://www.womeninai.co/waiawardsna" rel="noopener">official page</a> promotes the next edition in Toronto in June 2027 and has an expression of interest form. The <a href="https://www.womeninai.co/na-awards-category" rel="noopener">category list</a> includes Trailblazer, Executive Leader, Rising Star and Responsible AI.</p>
+<p>Run by Women in AI for women working in AI in Canada, the US and Mexico. Self-nominations are accepted. The <a href="https://www.womeninai.co/waiawardsna" rel="noopener">official page</a> promotes the next edition in Toronto in June 2027 and has an expression of interest form. The <a href="https://www.womeninai.co/na-awards-category" rel="noopener">category list</a> includes Trailblazer, Executive Leader, Rising Star and the AI for Good Award (Responsible AI Leader of the Year).</p>
 
 <h3>Women in AI (WAI) Awards Asia Pacific</h3>
 <p>The same organization's APAC awards have a category called AI in Cybersecurity (Risk Management) and another called AI in Defence and Intelligence. The <a href="https://www.womeninai.co/waiawards2026apac" rel="noopener">2026 APAC page</a> lists applications as closed on June 21, 2026, with the awards night on September 3, 2026, in Sydney.</p>
@@ -55,9 +55,6 @@
 
 <h3>WiCyS conference scholarships</h3>
 <p>Women in CyberSecurity (WiCyS) offers scholarships to its annual conference, covering registration, meals and two nights of shared lodging, less a $75 processing fee. Per the <a href="https://www.wicys.org/events/wicys-2027/wicys-2027-scholarships/" rel="noopener">WiCyS 2027 scholarships page</a>, applications for the March 17 to 19, 2027 conference in Denver closed on September 30, 2026.</p>
-
-<h3>Cyber Defense Magazine Women in Cybersecurity Scholarship Fund</h3>
-<p>The <a href="https://cyberdefenseawards.com/" rel="noopener">Cyber Defense Awards site</a>, run by Cyber Defense Magazine, lists a Women in Cybersecurity Scholarship Fund for 2026. The same site runs the Top Global CISOs and Global InfoSec Awards, which are open to everyone, not only women. It notes entry pricing for the InfoSec awards, so read the terms before you enter.</p>
 
 <h3>ESET Women in Cybersecurity Scholarship</h3>
 <p>For US citizens or permanent residents studying STEM or a cybersecurity field at an accredited college. The <a href="https://www.eset.com/us/women-in-cybersecurity-scholarship/" rel="noopener">official page</a> says the 2026 season has wrapped up; that cycle's deadline was April 8, 2026.</p>
@@ -78,7 +75,6 @@
   <li><a href="https://www.scworld.com/women-in-it-security" rel="noopener">SC Media: Women in IT Security</a></li>
   <li><a href="https://www.itsecurityguru.org/2025/11/25/nominations-open-for-the-most-inspiring-women-in-cyber-awards-2026/" rel="noopener">IT Security Guru: Most Inspiring Women in Cyber Awards 2026 nominations</a></li>
   <li><a href="https://www.womentech.net/women-in-tech-ai-awards" rel="noopener">WomenTech Network: Women in Tech and AI Awards 2026</a></li>
-  <li><a href="https://cyberdefenseawards.com/" rel="noopener">Cyber Defense Awards</a></li>
   <li><a href="https://www.womeninai.co/waiawardsna" rel="noopener">Women in AI: WAI Awards North America</a> and <a href="https://www.womeninai.co/na-awards-category" rel="noopener">categories</a></li>
   <li><a href="https://www.womeninai.co/waiawards2026apac" rel="noopener">Women in AI: WAI Awards 2026 APAC</a></li>
   <li><a href="https://venturebeat.com/ai/announcing-the-winners-of-venturebeats-7th-annual-women-in-ai-awards" rel="noopener">VentureBeat: 7th annual Women in AI Awards winners</a></li>
@@ -142,7 +138,7 @@
     <guid isPermaLink="true">https://iamjax.me/blog/deepfake-fraud-executive-training/</guid>
     <pubDate>Tue, 17 Nov 2026 12:00:00 +0000</pubDate>
     <dc:creator>Jax Scott</dc:creator>
-    <description>Deepfake CEO fraud is real: a $25 million video call, a cloned WPP CEO, FBI and FinCEN warnings. The six scenarios to train for and the controls that hold.</description>
+    <description>Deepfake CEO fraud is real: a $25 million video call, a WPP CEO impersonation, FBI and FinCEN warnings. The six scenarios to train for and the controls that hold.</description>
     <category>Deepfake fraud</category><category>Deepfake CEO fraud</category><category>Deepfake awareness training</category><category>Business email compromise</category><category>Voice cloning</category><category>Social engineering</category>
     <content:encoded><![CDATA[<section class="card tldr">
   <h2>The short version</h2>
@@ -159,19 +155,19 @@
 <h3>A whole video call, faked</h3>
 <p>In 2024, engineering firm Arup confirmed that an employee in its Hong Kong office joined a video call in which the people who appeared to be the chief financial officer and several colleagues were AI-generated fakes. The employee made 15 transfers totaling about $25.6 million, <a href="https://fortune.com/europe/2024/05/17/arup-deepfake-fraud-scam-victim-hong-kong-25-million-cfo/" rel="noopener">Fortune reported</a>.</p>
 
-<h3>A cloned CEO that failed</h3>
-<p>Fraudsters impersonated WPP CEO Mark Read with a fake WhatsApp account using his public photo, then a Microsoft Teams meeting that used a voice clone and YouTube footage, <a href="https://www.theguardian.com/technology/article/2024/may/10/ceo-wpp-deepfake-scam" rel="noopener">The Guardian reported</a>. They asked an agency leader to set up a new business. It failed, and WPP credited the vigilance of its people.</p>
+<h3>A CEO impersonation that failed</h3>
+<p>Fraudsters set up a WhatsApp account with WPP CEO Mark Read's public photo and used it to arrange a Microsoft Teams meeting. In the meeting they used a voice clone and YouTube footage of another senior executive, and impersonated Read through the chat window, <a href="https://www.theguardian.com/technology/article/2024/may/10/ceo-wpp-deepfake-scam" rel="noopener">The Guardian reported</a>. They asked an agency leader to set up a new business. It failed, and WPP credited the vigilance of its people.</p>
 
 <h3>What the FBI and FinCEN say</h3>
 <p>The FBI warned in December 2024 that criminals <a href="https://www.ic3.gov/PSA/2024/PSA241203" rel="noopener">generate video for real-time chats with supposed company executives</a> and use cloned voices to request money. In May 2025 it warned of <a href="https://www.ic3.gov/PSA/2025/PSA250515" rel="noopener">text and AI-generated voice messages impersonating senior US officials</a>, often paired with a request to move to another messaging platform.</p>
 <p>The FBI's <a href="https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf" rel="noopener">2025 Internet Crime Report</a> recorded 22,364 complaints with AI-related information and adjusted losses above $893 million. Business email compromise alone drew 24,768 complaints and about $3.05 billion in reported losses; the FBI notes that not all BEC is AI-enabled, but businesses reported more than $30 million lost to BEC involving AI.</p>
-<p>FinCEN's <a href="https://fincen.gov/system/files/shared/FinCEN-Alert-DeepFakes-Alert508FINAL.pdf" rel="noopener">November 2024 alert</a> says criminals have reportedly impersonated executives to instruct staff to send large payments. Its red flags include a third-party webcam plugin during a live check, sudden "technical glitches" that push a switch to another channel, and refusal to use multifactor authentication.</p>
+<p>FinCEN's <a href="https://fincen.gov/system/files/shared/FinCEN-Alert-DeepFakes-Alert508FINAL.pdf" rel="noopener">November 2024 alert</a> says criminals have reportedly impersonated executives to instruct staff to send large payments. Its red flags for banks verifying customers include a third-party webcam plugin during a live check, sudden "technical glitches" that push a switch to another channel, and refusal to use multifactor authentication.</p>
 
 <h2>Six scenarios to train for</h2>
 <ol>
   <li><b>The urgent video call.</b> A senior leader, and maybe others you know, on camera asking for a confidential transfer today.</li>
   <li><b>The voice note.</b> A short message in the CEO's voice: "Call me on this number, it's urgent."</li>
-  <li><b>The channel switch.</b> "Let's move this to WhatsApp" or "my camera is broken, use the chat." Both show up in the FBI and FinCEN warnings above.</li>
+  <li><b>The channel switch.</b> "Let's move this to WhatsApp" or "my camera is broken, use the chat." The FBI warns about the move to another platform, and a version of this shows up in FinCEN's red flags.</li>
   <li><b>The secret deal.</b> An acquisition or payment no one else can know about. Secrecy is the tell, because it stops you from checking.</li>
   <li><b>The bank detail change.</b> A known vendor or executive asks to pay a new account. This is classic BEC with a better voice.</li>
   <li><b>The fake candidate.</b> The FBI's <a href="https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf" rel="noopener">2025 Internet Crime Report</a> describes interviews where lip movement and audio do not line up, with the goal of getting onto the network.</li>
@@ -182,7 +178,7 @@
   <li><b>Call back on a number you already have.</b> Never on the number, link or meeting in the request. The FBI gives the same advice.</li>
   <li><b>Two people for money and access.</b> No single person can move funds or change bank details on a call or chat alone.</li>
   <li><b>Agree on a verification phrase.</b> The FBI recommends a secret word for families; executive teams can do the same for high-risk requests.</li>
-  <li><b>Phishing-resistant MFA.</b> FinCEN names it as a best practice. Never read a code to anyone.</li>
+  <li><b>Phishing-resistant MFA.</b> FinCEN names it as a best practice for identity checks. Never read a code to anyone.</li>
   <li><b>No exceptions for rank.</b> Put it in writing: anyone can pause a request from the CEO to verify it, and will be thanked for it.</li>
 </ul>
 <p class="why"><b>My take:</b> Most deepfake training teaches people to spot a glitchy face. That is a losing game. The winning move is a process that does not care how real the voice sounds. If your CFO cannot be talked into a transfer by the real CEO on a call without a callback, a fake one will not get far either.</p>
